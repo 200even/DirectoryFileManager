@@ -6,3 +6,11 @@ C:\Users\esfer_000\Documents\Visual Studio 2015\Projects\DirectoryFileManager\Di
 C:\Users\esfer_000\Documents\Visual Studio 2015\Projects\DirectoryFileManager\DirectoryFileManager.service\obj\Debug\DirectoryFileManager.service.csproj.GenerateResource.Cache
 C:\Users\esfer_000\Documents\Visual Studio 2015\Projects\DirectoryFileManager\DirectoryFileManager.service\obj\Debug\DirectoryFileManager.service.exe
 C:\Users\esfer_000\Documents\Visual Studio 2015\Projects\DirectoryFileManager\DirectoryFileManager.service\obj\Debug\DirectoryFileManager.service.pdb
+C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe.config
+C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\obj\Debug\DirectoryFileManager.service.exe
+C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\obj\Debug\DirectoryFileManager.service.pdb
+C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.pdb
+C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\obj\Debug\DirectoryFileManager.service.csprojResolveAssemblyReference.cache
+C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\obj\Debug\DirectoryFileManager.service.ProjectInstaller.resources
+C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\obj\Debug\DirectoryFileManager.service.csproj.GenerateResource.Cache

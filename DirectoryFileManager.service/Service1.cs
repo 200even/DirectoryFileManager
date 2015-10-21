@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 
 namespace DirectoryFileManager.service
@@ -14,6 +9,7 @@ namespace DirectoryFileManager.service
     public partial class Service1 : ServiceBase
     {
         private static Timer timer;
+        private static FileSystemWatcher watcher;
         public Service1()
         {
             InitializeComponent();
@@ -22,21 +18,48 @@ namespace DirectoryFileManager.service
         protected override void OnStart(string[] args)
         {
             Library.WriteErrorLog(new Exception("Directory File Manager started"));
-            timer = new Timer(10000);
+            scheduledCheck(60000);
+            monitorDirectories();
+
+        }
+
+        private void monitorDirectories()
+        {
+            watcher = new FileSystemWatcher("C:/Users/esfer_000/Desktop/DirectoryTest");
+            watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.DirectoryName | NotifyFilters.LastAccess;
+            watcher.Created += new FileSystemEventHandler(OnChanged);
+            watcher.Changed += new FileSystemEventHandler(OnChanged);
+            watcher.Deleted += new FileSystemEventHandler(OnChanged);
+            watcher.Renamed += new RenamedEventHandler(OnChanged);
+
+            //Begin watching
+            watcher.EnableRaisingEvents = true;
+        }
+
+        private void scheduledCheck(int interval)
+        {
+            timer = new Timer(interval);
             timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            timer.Enabled = true;     
+            timer.Enabled = true;
+        }
+
+        private void OnChanged(object sender, FileSystemEventArgs e)
+        {
+            Library.WriteErrorLog(new Exception("A file has been added."));
         }
 
         private void OnTimedEvent(object sender, ElapsedEventArgs e)
         {
-            //Project logic TODO
-            //var directory = new DirectoryInfo("C:\\MyDirectory");
+            //Project logic
+            var directory = new DirectoryInfo("C:/Users/esfer_000/Desktop/DirectoryTest");
             //var myFile = directory.GetFiles().OrderByDescending(f => f.LastWriteTime).First()
             Library.WriteErrorLog(new Exception("The job has completed."));
         }
 
         protected override void OnStop()
         {
+            watcher.EnableRaisingEvents = false;
+            watcher.Dispose();
             timer.Enabled = false;
             Library.WriteErrorLog(new Exception("Directory File Manager stopped"));
         }
