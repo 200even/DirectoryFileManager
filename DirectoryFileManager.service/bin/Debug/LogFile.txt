@@ -1,0 +1,6 @@
+10/21/2015 3:32:52 PM: Directory File Manager started
+10/21/2015 3:33:02 PM: The job has completed.
+10/21/2015 3:33:12 PM: The job has completed.
+10/21/2015 3:33:22 PM: The job has completed.
+10/21/2015 3:33:32 PM: The job has completed.
+10/21/2015 3:33:33 PM: Directory File Manager stopped
