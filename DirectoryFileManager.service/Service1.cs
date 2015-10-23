@@ -11,6 +11,7 @@ namespace DirectoryFileManager.service
     {
         private static Timer timer;
         private static FileSystemWatcher watcher;
+        DirectoryInfo d = GetDirectory();
         public Service1()
         {
             InitializeComponent();
@@ -31,10 +32,33 @@ namespace DirectoryFileManager.service
             Library.WriteErrorLog(new Exception("Directory File Manager stopped"));
         }
 
+        private static DirectoryInfo GetDirectory()
+        {
+            List<UserDirectorySettings> Directories = new List<UserDirectorySettings>();
+            string[] fileContents = File.ReadAllLines(@"C:/Users/esfer_000/Desktop/DirectoryTest/DirectoriesFollowed.csv");
+            foreach (string row in fileContents)
+            {
+                if (row.StartsWith("Directory"))
+                {
+                    continue;
+                }
+                string[] directoryInfo = row.Split(',');
+                UserDirectorySettings activeDirectory = new UserDirectorySettings();
+                activeDirectory.directory = new DirectoryInfo(directoryInfo[0]);
+                activeDirectory.maxCount = int.Parse(directoryInfo[1]);
+                Directories.Add(activeDirectory);
+            }
+
+            var directory = Directories.FirstOrDefault().directory;
+            //var directory = new DirectoryInfo("C:/Users/esfer_000/Desktop/DirectoryTest");
+            return directory;
+        }
+
         //File watcher events
         private void monitorDirectories()
         {
-            watcher = new FileSystemWatcher("C:/Users/esfer_000/Desktop/DirectoryTest");
+            
+            watcher = new FileSystemWatcher(d.ToString());
             watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.DirectoryName | NotifyFilters.LastAccess;
             watcher.Created += new FileSystemEventHandler(OnChanged);
             watcher.Changed += new FileSystemEventHandler(OnChanged);
@@ -47,35 +71,44 @@ namespace DirectoryFileManager.service
 
         private void OnChanged(object sender, FileSystemEventArgs e)
         {
-            var directory = new DirectoryInfo("C:/Users/esfer_000/Desktop/DirectoryTest");
-            
-            //Get the files and folders in the directory and order by descending
-            List<FileSystemInfo> items = new List<FileSystemInfo>();           
-            FileSystemInfo[] folders = directory.GetDirectories();
-            FileSystemInfo[] files = directory.GetFiles();
-            foreach(var f in folders)
-            {
-                items.Add(f);
-            }
-            foreach(var f in files)
-            {
-                items.Add(f);
-            }
-            items.OrderByDescending(f => f.LastWriteTime);
+            List<FileSystemInfo> items = GetItems(d);
+            DeleteOldItems(d, items);
+        }
 
+        private static void DeleteOldItems(DirectoryInfo directory, List<FileSystemInfo> items)
+        {
             var oldest = items.Last();
-            if (items.Count > 5)
+            int maxCount = 5;
+            if (items.Count > maxCount)
             {
                 try
                 {
                     oldest.Delete();
+                    Library.WriteErrorLog(new Exception($"{oldest.Name} has been deleted to make room for {items.FirstOrDefault()} The maximum number of files in {directory.Name} is {maxCount}."));
                 }
                 catch
                 {
                 }
             }
-            Library.WriteErrorLog(new Exception($"The directory has been modified. There are {items.Count} items in the directory."));
         }
+
+        private static List<FileSystemInfo> GetItems(DirectoryInfo directory)
+        {
+            List<FileSystemInfo> items = new List<FileSystemInfo>();
+            FileSystemInfo[] folders = directory.GetDirectories();
+            FileSystemInfo[] files = directory.GetFiles();
+            foreach (var f in folders)
+            {
+                items.Add(f);
+            }
+            foreach (var f in files)
+            {
+                items.Add(f);
+            }
+            List<FileSystemInfo> orderedItems = items.OrderByDescending(f => f.LastWriteTime).ToList();
+            return orderedItems;
+        }
+
 
 
         //Timed checking events
