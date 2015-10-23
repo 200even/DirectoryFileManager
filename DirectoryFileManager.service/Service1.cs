@@ -11,7 +11,7 @@ namespace DirectoryFileManager.service
     {
         private static Timer timer;
         private static FileSystemWatcher watcher;
-        DirectoryInfo d = GetDirectory();
+        private static List<UserDirectorySettings> d = UserDirectorySettings.GetDirectories();
         public Service1()
         {
             InitializeComponent();
@@ -32,38 +32,18 @@ namespace DirectoryFileManager.service
             Library.WriteErrorLog(new Exception("Directory File Manager stopped"));
         }
 
-        private static DirectoryInfo GetDirectory()
-        {
-            List<UserDirectorySettings> Directories = new List<UserDirectorySettings>();
-            string[] fileContents = File.ReadAllLines(@"C:/Users/esfer_000/Desktop/DirectoryTest/DirectoriesFollowed.csv");
-            foreach (string row in fileContents)
-            {
-                if (row.StartsWith("Directory"))
-                {
-                    continue;
-                }
-                string[] directoryInfo = row.Split(',');
-                UserDirectorySettings activeDirectory = new UserDirectorySettings();
-                activeDirectory.directory = new DirectoryInfo(directoryInfo[0]);
-                activeDirectory.maxCount = int.Parse(directoryInfo[1]);
-                Directories.Add(activeDirectory);
-            }
-
-            var directory = Directories.FirstOrDefault().directory;
-            //var directory = new DirectoryInfo("C:/Users/esfer_000/Desktop/DirectoryTest");
-            return directory;
-        }
-
         //File watcher events
         private void monitorDirectories()
         {
-            
-            watcher = new FileSystemWatcher(d.ToString());
-            watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.DirectoryName | NotifyFilters.LastAccess;
-            watcher.Created += new FileSystemEventHandler(OnChanged);
-            watcher.Changed += new FileSystemEventHandler(OnChanged);
-            watcher.Deleted += new FileSystemEventHandler(OnChanged);
-            watcher.Renamed += new RenamedEventHandler(OnChanged);
+            foreach (var dir in d)
+            {
+                watcher = new FileSystemWatcher(dir.directory.ToString());
+                watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.DirectoryName | NotifyFilters.LastAccess;
+                watcher.Created += new FileSystemEventHandler(OnChanged);
+                watcher.Changed += new FileSystemEventHandler(OnChanged);
+                watcher.Deleted += new FileSystemEventHandler(OnChanged);
+                watcher.Renamed += new RenamedEventHandler(OnChanged);
+            }
 
             //Begin watching
             watcher.EnableRaisingEvents = true;
@@ -71,14 +51,14 @@ namespace DirectoryFileManager.service
 
         private void OnChanged(object sender, FileSystemEventArgs e)
         {
-            List<FileSystemInfo> items = GetItems(d);
-            DeleteOldItems(d, items);
+            List<FileSystemInfo> items = GetItems(d.FirstOrDefault().directory);
+            DeleteOldItems(d.FirstOrDefault().directory, items);
         }
 
         private static void DeleteOldItems(DirectoryInfo directory, List<FileSystemInfo> items)
         {
             var oldest = items.Last();
-            int maxCount = 5;
+            int maxCount = d.FirstOrDefault().maxCount;
             if (items.Count > maxCount)
             {
                 try
