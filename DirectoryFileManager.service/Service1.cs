@@ -9,8 +9,7 @@ namespace DirectoryFileManager.service
 {
     public partial class Service1 : ServiceBase
     {
-        private static Timer timer;
-        private static FileSystemWatcher watcher;
+        private static List<FileSystemWatcher> watchers = new List<FileSystemWatcher>();
         private static List<UserDirectorySettings> d = UserDirectorySettings.GetDirectories();
         public Service1()
         {
@@ -20,45 +19,58 @@ namespace DirectoryFileManager.service
         protected override void OnStart(string[] args)
         {
             Library.WriteErrorLog(new Exception("Directory File Manager started"));
-            scheduledCheck(60000);
             monitorDirectories();
         }
 
         protected override void OnStop()
         {
-            watcher.EnableRaisingEvents = false;
-            watcher.Dispose();
-            timer.Enabled = false;
+            foreach(var watcher in watchers)
+            {
+                watcher.EnableRaisingEvents = false;
+                watcher.Dispose();
+            }
+
             Library.WriteErrorLog(new Exception("Directory File Manager stopped"));
         }
 
-        //File watcher events
         private void monitorDirectories()
         {
+            
             foreach (var dir in d)
             {
-                watcher = new FileSystemWatcher(dir.directory.ToString());
-                watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.DirectoryName | NotifyFilters.LastAccess;
-                watcher.Created += new FileSystemEventHandler(OnChanged);
-                watcher.Changed += new FileSystemEventHandler(OnChanged);
-                watcher.Deleted += new FileSystemEventHandler(OnChanged);
-                watcher.Renamed += new RenamedEventHandler(OnChanged);
+                try
+                {
+                    FileSystemWatcher watcher = new FileSystemWatcher(dir.directory.ToString());
+                    watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.DirectoryName | NotifyFilters.LastAccess;
+                    watcher.Created += new FileSystemEventHandler(OnChanged);
+                    watcher.Changed += new FileSystemEventHandler(OnChanged);
+                    watcher.Deleted += new FileSystemEventHandler(OnChanged);
+                    watcher.Renamed += new RenamedEventHandler(OnChanged);
+                    //Begin watching
+                    watcher.EnableRaisingEvents = true;
+                    watchers.Add(watcher);
+                }
+                catch
+                {
+                }
             }
 
-            //Begin watching
-            watcher.EnableRaisingEvents = true;
+            
         }
 
         private void OnChanged(object sender, FileSystemEventArgs e)
         {
-            List<FileSystemInfo> items = GetItems(d.FirstOrDefault().directory);
-            DeleteOldItems(d.FirstOrDefault().directory, items);
+            FileSystemWatcher changedDirectory = (FileSystemWatcher)sender;
+            var changedDirectoryInfo = new DirectoryInfo(changedDirectory.Path);
+            List<FileSystemInfo> items = GetItems(changedDirectoryInfo);
+            DeleteOldItems(changedDirectoryInfo, items);
         }
 
         private static void DeleteOldItems(DirectoryInfo directory, List<FileSystemInfo> items)
         {
             var oldest = items.Last();
-            int maxCount = d.FirstOrDefault().maxCount;
+            var changedDirectory = d.FirstOrDefault(d => d.directory.CreationTime == directory.CreationTime);
+            int maxCount = changedDirectory.maxCount;
             if (items.Count > maxCount)
             {
                 try
@@ -88,26 +100,5 @@ namespace DirectoryFileManager.service
             List<FileSystemInfo> orderedItems = items.OrderByDescending(f => f.LastWriteTime).ToList();
             return orderedItems;
         }
-
-
-
-        //Timed checking events
-        private void scheduledCheck(int interval)
-        {
-            timer = new Timer(interval);
-            timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            timer.Enabled = true;
-        }
-
-        
-        private void OnTimedEvent(object sender, ElapsedEventArgs e)
-        {
-            //Project logic
-            var directory = new DirectoryInfo("C:/Users/esfer_000/Desktop/DirectoryTest");
-            //var myFile = directory.GetFiles().OrderByDescending(f => f.LastWriteTime).First()
-            Library.WriteErrorLog(new Exception("The job has completed."));
-        }
-
-        
     }
 }

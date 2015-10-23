@@ -654,3 +654,150 @@ Affected parameters are:
    logtoconsole = 
    logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
    assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Uninstalling assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Removing EventLog source DirectoryFileManager.
+Service DirectoryFileManager is being removed from the system...
+Service DirectoryFileManager was successfully removed from the system.
+Installing assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Installing service DirectoryFileManager...
+Service DirectoryFileManager has been successfully installed.
+Creating EventLog source DirectoryFileManager in log Application...
+Committing assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Uninstalling assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Removing EventLog source DirectoryFileManager.
+Service DirectoryFileManager is being removed from the system...
+Service DirectoryFileManager was successfully removed from the system.
+Installing assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Installing service DirectoryFileManager...
+Service DirectoryFileManager has been successfully installed.
+Creating EventLog source DirectoryFileManager in log Application...
+Committing assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Uninstalling assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Removing EventLog source DirectoryFileManager.
+Service DirectoryFileManager is being removed from the system...
+Service DirectoryFileManager was successfully removed from the system.
+Installing assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Installing service DirectoryFileManager...
+Service DirectoryFileManager has been successfully installed.
+Creating EventLog source DirectoryFileManager in log Application...
+Committing assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Uninstalling assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Removing EventLog source DirectoryFileManager.
+Service DirectoryFileManager is being removed from the system...
+Service DirectoryFileManager was successfully removed from the system.
+Installing assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Installing service DirectoryFileManager...
+Service DirectoryFileManager has been successfully installed.
+Creating EventLog source DirectoryFileManager in log Application...
+Committing assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Uninstalling assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Removing EventLog source DirectoryFileManager.
+Service DirectoryFileManager is being removed from the system...
+Service DirectoryFileManager was successfully removed from the system.
+Installing assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Installing service DirectoryFileManager...
+Service DirectoryFileManager has been successfully installed.
+Creating EventLog source DirectoryFileManager in log Application...
+Committing assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Uninstalling assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Removing EventLog source DirectoryFileManager.
+Service DirectoryFileManager is being removed from the system...
+Service DirectoryFileManager was successfully removed from the system.
+Installing assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Installing service DirectoryFileManager...
+Service DirectoryFileManager has been successfully installed.
+Creating EventLog source DirectoryFileManager in log Application...
+Committing assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Uninstalling assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Removing EventLog source DirectoryFileManager.
+Service DirectoryFileManager is being removed from the system...
+Service DirectoryFileManager was successfully removed from the system.
+Installing assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
+Installing service DirectoryFileManager...
+Service DirectoryFileManager has been successfully installed.
+Creating EventLog source DirectoryFileManager in log Application...
+Committing assembly 'C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.InstallLog
+   assemblypath = C:\Users\esfer_000\Documents\GitHub\DirectoryFileManager\DirectoryFileManager.service\bin\Debug\DirectoryFileManager.service.exe
